@@ -76,11 +76,10 @@ set t_vb=
 set tm=500
 
 " TAB setting{
-   set expandtab        "replace <TAB> with spaces
-   set softtabstop=3 
-   set shiftwidth=3 
-
-   au FileType Makefile set noexpandtab
+   set noexpandtab
+   set softtabstop=4
+   set tabstop=4
+   set shiftwidth=4
 "}      							
 
 " status line {
