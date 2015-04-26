@@ -24,6 +24,7 @@ set ruler		" show the cursor position all the time
 set autoread		" auto read when file is changed from outside
 set directory=/tmp
 set backupdir=/tmp
+set nu
 
 
 filetype off          " necessary to make ftdetect work on Linux
@@ -174,6 +175,14 @@ cnoremap <C-A>      <Home>
 cnoremap <C-E>      <End>
 cnoremap <C-K>      <C-U>
 
+:" map Mac OS X Terminal.app default Home and End
+map <ESC>[H <Home>
+map <ESC>[F <End>
+imap <ESC>[H <C-O><Home>
+imap <ESC>[F <C-O><End>
+cmap <ESC>[H <Home>
+cmap <ESC>[F <End>
+
 " ,p toggles paste mode
 nmap <leader>p :set paste!<BAR>set paste?<CR>
 
@@ -201,25 +210,6 @@ cmap cd. lcd %:p:h
    noremap  <C-u>5 yypVr^
    inoremap <C-u>5 <esc>yypVr^A
 "}
-
-"--------------------------------------------------------------------------- 
-" PROGRAMMING SHORTCUTS
-"--------------------------------------------------------------------------- 
-
-" Ctrl-[ jump out of the tag stack (undo Ctrl-])
-map <C-[> <ESC>:po<CR>
-
-" ,g generates the header guard
-map <leader>g :call IncludeGuard()<CR>
-fun! IncludeGuard()
-   let basename = substitute(bufname(""), '.*/', '', '')
-   let guard = '_' . substitute(toupper(basename), '\.', '_', "H")
-   call append(0, "#ifndef " . guard)
-   call append(1, "#define " . guard)
-   call append( line("$"), "#endif // for #ifndef " . guard)
-endfun
-
-
 
 " Enable omni completion. (Ctrl-X Ctrl-O)
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
