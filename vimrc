@@ -378,6 +378,7 @@ let g:snipMateAllowMatchingDot = 0
 
 " --- vim-gitgutter
 let g:gitgutter_enabled = 1
+let g:gitgutter_override_sign_column_highlight = 0
 
 if has("gui_running")	" GUI color and font settings
   set guifont=Osaka-Mono:h20
