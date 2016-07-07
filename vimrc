@@ -25,6 +25,7 @@ Plugin 'wincent/command-t'
 Plugin 'majutsushi/tagbar'
 Plugin 'airblade/vim-gitgutter.git'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'fatih/vim-go'
 " plugin from http://vim-scripts.org/vim/scripts.html
 Plugin 'L9'
 
@@ -380,10 +381,10 @@ let g:snipMateAllowMatchingDot = 0
 let g:gitgutter_enabled = 1
 let g:gitgutter_override_sign_column_highlight = 0
 
+set t_Co=256          " 256 color mode
 if has("gui_running")	" GUI color and font settings
   set guifont=Osaka-Mono:h20
   set background=dark 
-  set t_Co=256          " 256 color mode
   set cursorline        " highlight current line
   colors moria
   highlight CursorLine          guibg=#003853 ctermbg=24  gui=none cterm=none
