@@ -1,9 +1,4 @@
-" vgod's vimrc
-" Tsung-Hsiang (Sean) Chang <vgod@vgod.tw>
-" Fork me on GITHUB  https://github.com/vgod/vimrc
-
-" read https://github.com/vgod/vimrc/blob/master/README.md for more info
-
+" vundle settings
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -45,7 +40,6 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 " General Settings
 
-set nocompatible	" not compatible with the old-fashion vi mode
 set bs=2		" allow backspacing over everything in insert mode
 set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
@@ -82,6 +76,7 @@ set copyindent		" copy the previous indentation on autoindenting
 set ignorecase		" ignore case when searching
 set smartcase		" ignore case if search pattern is all lowercase,case-sensitive otherwise
 set smarttab		" insert tabs on the start of a line according to context
+set tabpagemax=100  " avoid default tabpagemax=10
 
 " disable sound on errors
 set noerrorbells
